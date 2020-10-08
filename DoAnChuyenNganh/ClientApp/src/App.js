@@ -10,6 +10,7 @@ import { AddNewDonVi } from './components/AddDonVi';
 import { TestFectchDonVis } from './components/CRUDDonVi';
 import { FectchDongTbs } from './components/CRUDDongTb';
 import { FetchLoaiTbs } from './components/CRUDLoaiThietBi';
+import { FetchHoaDons } from './components/CRUDHoaDon';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -28,7 +29,8 @@ export default class App extends Component {
                     <Route path="/themDonVi" component={AddNewDonVi}/>
                     <Route path="/DonVis/edit/:maDonVi" component={AddNewDonVi} />
                     <Route path="/fetch-dongtb" component={FectchDongTbs} />
-                    <Route path="/fetch-loaitb" component={FetchLoaiTbs}/>
+                    <Route path="/fetch-loaitb" component={FetchLoaiTbs} />
+                    <Route path="/fetch-hoadon" component={FetchHoaDons}/>
                 </Router>
             </div>
             <RightSideBar/>
