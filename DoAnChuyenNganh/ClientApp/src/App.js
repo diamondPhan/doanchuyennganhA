@@ -7,8 +7,9 @@ import LeftSideBar from './components/LeftSideBar';
 import RightSideBar from './components/RightSideBar';
 import { FectchDonVis } from './components/DonViPage';
 import { AddNewDonVi } from './components/AddDonVi';
-import { TestFectchDonVis } from './components/testaxios';
+import { TestFectchDonVis } from './components/CRUDDonVi';
 import { FectchDongTbs } from './components/CRUDDongTb';
+import { FetchLoaiTbs } from './components/CRUDLoaiThietBi';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -26,7 +27,8 @@ export default class App extends Component {
                     <Route path="/test-fetch-donvi" component={TestFectchDonVis} />
                     <Route path="/themDonVi" component={AddNewDonVi}/>
                     <Route path="/DonVis/edit/:maDonVi" component={AddNewDonVi} />
-                    <Route path="/fetch-dongtb" component={FectchDongTbs}/>
+                    <Route path="/fetch-dongtb" component={FectchDongTbs} />
+                    <Route path="/fetch-loaitb" component={FetchLoaiTbs}/>
                 </Router>
             </div>
             <RightSideBar/>

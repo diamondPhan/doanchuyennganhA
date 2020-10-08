@@ -99,7 +99,7 @@ namespace DoAnChuyenNganh.Controllers
             return CreatedAtAction("GetDonVi", new { id = donVi.MaDonVi }, donVi);
         }
 
-        //DELETE: api/DonVis/5
+        // XDELETE: api/DonVis/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<DonVi>> DeleteDonVi(string id)
         {
