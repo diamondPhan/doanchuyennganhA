@@ -1,0 +1,14 @@
+﻿
+
+.tbx_Add {
+    color: black;
+}
+
+.tbx_Edit {
+    color: red;
+    
+}
+input:read-only .tbx_Edit {
+
+}
+
