@@ -22,7 +22,7 @@ namespace DoAnChuyenNganh.Models
         public virtual DbSet<MaTb> MaTb { get; set; }
         public virtual DbSet<NhomKd> NhomKd { get; set; }
         public virtual DbSet<NhomTb> NhomTb { get; set; }
-        public virtual DbSet<ThôngTinKd> ThôngTinKd { get; set; }
+        public virtual DbSet<ThongTinKD> ThôngTinKd { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -227,7 +227,7 @@ namespace DoAnChuyenNganh.Models
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<ThôngTinKd>(entity =>
+            modelBuilder.Entity<ThongTinKD>(entity =>
             {
                 entity.HasKey(e => e.MaKd)
                     .HasName("PK__'Thông t__2725CF02ACA60A3F");

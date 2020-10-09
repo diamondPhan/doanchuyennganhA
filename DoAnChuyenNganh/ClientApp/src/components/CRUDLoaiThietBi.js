@@ -115,7 +115,7 @@ export class FetchLoaiTbs extends Component {
         );
     }
 
-    renderLoaiTbsTable(donVis) {
+    renderLoaiTbsTable(loaiTbs) {
         return (
             <table className="table table-borderless table-hover table-centered m-0">
                 <thead className="thead-light">
@@ -128,7 +128,7 @@ export class FetchLoaiTbs extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {donVis.map((loaiTb) => (
+                    {loaiTbs.map((loaiTb) => (
                         <tr
                             key={loaiTb.maLoai}
                             onClick={(id) => this.lnk_Click(loaiTb.maLoai)}

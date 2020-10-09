@@ -7,7 +7,7 @@ namespace DoAnChuyenNganh.Models
     {
         public MaTb()
         {
-            ThôngTinKd = new HashSet<ThôngTinKd>();
+            ThôngTinKd = new HashSet<ThongTinKD>();
         }
 
         public double? Stt { get; set; }
@@ -24,7 +24,7 @@ namespace DoAnChuyenNganh.Models
         public string TenChuan { get; set; }
         public string GiaMua { get; set; }
         public string DonViBan { get; set; }
-        public string ĐơnVịTính { get; set; }
+        public string DonViTinh { get; set; }
         public double? Soluong { get; set; }
         public string TinhTrang { get; set; }
         public double? NgayTinhTrang { get; set; }
@@ -34,9 +34,8 @@ namespace DoAnChuyenNganh.Models
         public double? NuocSanXuat { get; set; }
         public double? NamSx { get; set; }
         public double? GhiChu { get; set; }
-        public string F25 { get; set; }
-        public string F26 { get; set; }
-        public string F27 { get; set; }
+        public int delete { get; set; }
+   
 
         public virtual DongTb IddongTbNavigation { get; set; }
         public virtual HoaDon IdhoaDonNavigation { get; set; }
@@ -44,6 +43,6 @@ namespace DoAnChuyenNganh.Models
         public virtual DonVi MaDonViNavigation { get; set; }
         public virtual LoaiTb MaLoaiNavigation { get; set; }
         public virtual NhomKd MaNhomKdNavigation { get; set; }
-        public virtual ICollection<ThôngTinKd> ThôngTinKd { get; set; }
+        public virtual ICollection<ThongTinKD> ThongTinKD { get; set; }
     }
 }

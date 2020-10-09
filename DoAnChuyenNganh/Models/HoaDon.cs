@@ -16,6 +16,7 @@ namespace DoAnChuyenNganh.Models
         public string LoaiHoaDon { get; set; }
         public string TinhTrangHoaDon { get; set; }
         public string ViTriLuuTruHd { get; set; }
+        public int delete { get; set; }
 
         public virtual ICollection<MaTb> MaTb { get; set; }
     }

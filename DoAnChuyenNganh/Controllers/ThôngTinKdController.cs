@@ -22,14 +22,14 @@ namespace DoAnChuyenNganh.Controllers
 
         // GET: api/ThôngTinKd
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ThôngTinKd>>> GetThôngTinKd()
+        public async Task<ActionResult<IEnumerable<ThongTinKD>>> GetThôngTinKd()
         {
             return await _context.ThôngTinKd.ToListAsync();
         }
 
         // GET: api/ThôngTinKd/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ThôngTinKd>> GetThôngTinKd(double id)
+        public async Task<ActionResult<ThongTinKD>> GetThôngTinKd(double id)
         {
             var thôngTinKd = await _context.ThôngTinKd.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace DoAnChuyenNganh.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutThôngTinKd(double id, ThôngTinKd thôngTinKd)
+        public async Task<IActionResult> PutThôngTinKd(double id, ThongTinKD thôngTinKd)
         {
             if (id != thôngTinKd.MaKd)
             {
@@ -77,7 +77,7 @@ namespace DoAnChuyenNganh.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<ThôngTinKd>> PostThôngTinKd(ThôngTinKd thôngTinKd)
+        public async Task<ActionResult<ThongTinKD>> PostThôngTinKd(ThongTinKD thôngTinKd)
         {
             _context.ThôngTinKd.Add(thôngTinKd);
             try
@@ -101,7 +101,7 @@ namespace DoAnChuyenNganh.Controllers
 
         // DELETE: api/ThôngTinKd/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ThôngTinKd>> DeleteThôngTinKd(double id)
+        public async Task<ActionResult<ThongTinKD>> DeleteThôngTinKd(double id)
         {
             var thôngTinKd = await _context.ThôngTinKd.FindAsync(id);
             if (thôngTinKd == null)

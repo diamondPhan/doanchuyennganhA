@@ -160,7 +160,7 @@ export class FectchDongTbs extends Component {
                 &nbsp;
                 <button
                                     className="btn btn-danger"
-                                    onClick={(id) => this.handleDelete(dongTb.iddongTb)}
+                                    onClick={this.handleDeleted}
                                 >
                                     Xóa
                 </button>
@@ -205,6 +205,30 @@ export class FectchDongTbs extends Component {
             iddongTb: document.getElementById("IdDongtb").value,
             dongTb1: document.getElementById("tenDongTb").value,
             idnhomTb: document.getElementById("IdNhomTb").value,
+        };
+        axios.put("api/DongTbs/" + id, newDongTb).then((response) => {
+            console.log(response);
+            var result = response.data;
+            console.log(result);
+            if (!result) {
+                alert("hihi");
+                this.getAll();
+                window.location.href = "/fetch-dongtb";
+            } else {
+
+                alert("No success");
+                // window.location.href = "/test-fetch-donvi";
+            }
+        });
+    };
+    handleDeleted = (event) => {
+        var deleted = 1;
+        var id = document.getElementById("IdDongtb").value;
+        var newDongTb = {
+            iddongTb: document.getElementById("IdDongtb").value,
+            dongTb1: document.getElementById("tenDongTb").value,
+            idnhomTb: document.getElementById("IdNhomTb").value,
+            delete: deleted,
         };
         axios.put("api/DongTbs/" + id, newDongTb).then((response) => {
             console.log(response);
