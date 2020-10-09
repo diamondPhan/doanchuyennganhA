@@ -11,32 +11,38 @@ import { TestFectchDonVis } from './components/CRUDDonVi';
 import { FectchDongTbs } from './components/CRUDDongTb';
 import { FetchLoaiTbs } from './components/CRUDLoaiThietBi';
 import { FetchHoaDons } from './components/CRUDHoaDon';
+import { FetchNhomKDs } from './components/CRUDNhomKD';
+import { FetchNhomTBs } from './components/CRUDNhomTb';
+import { FetchThongTins } from './components/CRUDThongTin';
 
 export default class App extends Component {
-  static displayName = App.name;
+    static displayName = App.name;
 
-  render () {
-    return (
+    render() {
+        return (
 
-        <div>
-            <div id="wrapper">
-                <TopBar />
-                <LeftSideBar />
-                
-                <Router>
-                    <Route path="/fetch-donvi" component={FectchDonVis} />
-                    <Route path="/test-fetch-donvi" component={TestFectchDonVis} />
-                    <Route path="/themDonVi" component={AddNewDonVi}/>
-                    <Route path="/DonVis/edit/:maDonVi" component={AddNewDonVi} />
-                    <Route path="/fetch-dongtb" component={FectchDongTbs} />
-                    <Route path="/fetch-loaitb" component={FetchLoaiTbs} />
-                    <Route path="/fetch-hoadon" component={FetchHoaDons}/>
-                </Router>
+            <div>
+                <div id="wrapper">
+                    <TopBar />
+                    <LeftSideBar />
+
+                    <Router>
+                        <Route path="/fetch-donvi" component={FectchDonVis} />
+                        <Route path="/test-fetch-donvi" component={TestFectchDonVis} />
+                        <Route path="/themDonVi" component={AddNewDonVi} />
+                        <Route path="/DonVis/edit/:maDonVi" component={AddNewDonVi} />
+                        <Route path="/fetch-dongtb" component={FectchDongTbs} />
+                        <Route path="/fetch-loaitb" component={FetchLoaiTbs} />
+                        <Route path="/fetch-hoadon" component={FetchHoaDons} />
+                        <Route path="/fetch-nhomkd" component={FetchNhomKDs} />
+                        <Route path="/fetch-nhomtb" component={FetchNhomTBs} />
+                        <Route path="/fetch-thongTin" component={FetchThongTins} />
+                    </Router>
+                </div>
+                <RightSideBar />
+                <div className="rightbar-overlay" />
             </div>
-            <RightSideBar/>
-            <div className="rightbar-overlay" />
-        </div>
 
-    );
-  }
+        );
+    }
 }

@@ -22,7 +22,7 @@ namespace DoAnChuyenNganh.Models
         public virtual DbSet<MaTb> MaTb { get; set; }
         public virtual DbSet<NhomKd> NhomKd { get; set; }
         public virtual DbSet<NhomTb> NhomTb { get; set; }
-        public virtual DbSet<ThongTinKD> ThôngTinKd { get; set; }
+        public virtual DbSet<ThongTinKD> ThongTinKd { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -116,12 +116,6 @@ namespace DoAnChuyenNganh.Models
 
                 entity.Property(e => e.DonViBan).HasMaxLength(255);
 
-                entity.Property(e => e.F25).HasMaxLength(255);
-
-                entity.Property(e => e.F26).HasMaxLength(255);
-
-                entity.Property(e => e.F27).HasMaxLength(255);
-
                 entity.Property(e => e.GiaMua).HasMaxLength(255);
 
                 entity.Property(e => e.IddongTb)
@@ -162,8 +156,8 @@ namespace DoAnChuyenNganh.Models
 
                 entity.Property(e => e.ViTriLuuTruBkk).HasColumnName("ViTriLuuTruBKK");
 
-                entity.Property(e => e.ĐơnVịTính)
-                    .HasColumnName("Đơn vị tính")
+                entity.Property(e => e.DonViTinh)
+                    .HasColumnName("DonViTinh")
                     .HasMaxLength(255);
 
                 entity.HasOne(d => d.IddongTbNavigation)
@@ -230,9 +224,9 @@ namespace DoAnChuyenNganh.Models
             modelBuilder.Entity<ThongTinKD>(entity =>
             {
                 entity.HasKey(e => e.MaKd)
-                    .HasName("PK__'Thông t__2725CF02ACA60A3F");
+                    .HasName("PK__'Thong t__2725CF02ACA60A3F");
 
-                entity.ToTable("'Thông tin KD$'");
+                entity.ToTable("ThongTinKD$");
 
                 entity.Property(e => e.MaKd).HasColumnName("MaKD");
 
@@ -246,10 +240,6 @@ namespace DoAnChuyenNganh.Models
                     .HasColumnName("DonViKD")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.F13).HasMaxLength(255);
-
-                entity.Property(e => e.F14).HasMaxLength(255);
-
                 entity.Property(e => e.GiaKd).HasColumnName("GiaKD");
 
                 entity.Property(e => e.MaTb)
@@ -260,15 +250,15 @@ namespace DoAnChuyenNganh.Models
                     .HasColumnName("NgaytoihanKD")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.NgàyKdganNhat)
-                    .HasColumnName("NgàyKDGanNhat")
+                entity.Property(e => e.NgayKdganNhat)
+                    .HasColumnName("NgayKDGanNhat")
                     .HasColumnType("datetime");
 
                 entity.Property(e => e.SoKd)
                     .HasColumnName("SoKD")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.SốSeri).HasColumnName("Số seri");
+                entity.Property(e => e.SoSeri).HasColumnName("SoSeri");
 
                 entity.Property(e => e.TinhTrangKd)
                     .HasColumnName("TinhTrangKD")
@@ -279,9 +269,9 @@ namespace DoAnChuyenNganh.Models
                     .HasMaxLength(255);
 
                 entity.HasOne(d => d.MaTbNavigation)
-                    .WithMany(p => p.ThôngTinKd)
+                    .WithMany(p => p.ThongTinKD)
                     .HasForeignKey(d => d.MaTb)
-                    .HasConstraintName("FK_'Thông tin KD$'_MaTB$");
+                    .HasConstraintName("FK_'Thong tin KD$'_MaTB$");
             });
 
             OnModelCreatingPartial(modelBuilder);

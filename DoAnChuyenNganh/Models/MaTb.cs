@@ -7,7 +7,7 @@ namespace DoAnChuyenNganh.Models
     {
         public MaTb()
         {
-            ThôngTinKd = new HashSet<ThongTinKD>();
+            ThongTinKD = new HashSet<ThongTinKD>();
         }
 
         public double? Stt { get; set; }
